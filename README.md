@@ -1,6 +1,6 @@
 # Import_Project_To_Github
 
-## 如何把新建的项目上传到github(注: 此教程是基于已有github账号,pc端安装了git,如没有安装git,请自行网上搜索安装)[图文参考链接](https://www.cnblogs.com/shenchanghui/p/7184101.html)
+## 如何把新建的项目上传到github(注: 此教程是基于已有github账号,pc端安装了git,如没有安装git,请自行网上搜索安装)
 
 #### 第一步：打开Github网站：https://github.com/，登录自己的账号。
 
@@ -22,5 +22,5 @@
 
 #### 输入“git push -u origin master”，这里可能会要求输入Github的账号密码(注: 如果是第一次,就需要输入github账号密码)，按要求输入就可以
 
-#### 至此, 就结束了.
+#### 至此, 就结束了(注: [整个教程的图文参考链接](https://www.cnblogs.com/shenchanghui/p/7184101.html))
 

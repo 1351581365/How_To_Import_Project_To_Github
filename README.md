@@ -6,4 +6,4 @@
 
 ### 第二步：如下图所示，点击Your profile，进入仓库管理：
 
-https://storage.live.com/items/3A6D03A7466CF5FF!4515?authkey=ANi1DfJoyRsqBZM
+![图片](https://storage.live.com/items/3A6D03A7466CF5FF!4515?authkey=ANi1DfJoyRsqBZM)

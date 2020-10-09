@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4,10,16,22 * * *'
+  watch:
+    types: started
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Normal user mirror
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/lxk0301
+          dst: gitee/lxk0301
+          static_list: "How_To_Import_Project_To_Github"
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}

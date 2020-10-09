@@ -11,12 +11,14 @@ on:
 
 jobs:
   build:
-
+    env:
+      dst_token: ${{ secrets.GITEE_TOKEN }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Normal user mirror
         uses: Yikun/hub-mirror-action@master
+        if: env.dst_token
         with:
           src: github/lxk0301
           dst: gitee/lxk0301

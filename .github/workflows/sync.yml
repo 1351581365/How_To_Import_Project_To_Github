@@ -10,18 +10,31 @@ on:
     types: started
 
 jobs:
-  build:
+  repo-sync:
     env:
-      dst_token: ${{ secrets.GITEE_TOKEN }}
+      PAT: ${{ secrets.PAT }}
+      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - name: Normal user mirror
-        uses: Yikun/hub-mirror-action@master
-        if: env.dst_token
-        with:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    
+    - name: sync-lxk0301-scripts
+      uses: repo-sync/github-sync@v2
+      if: env.PAT
+      with:
+        source_repo: "https://github.com/lxk0301/scripts.git"
+        source_branch: "master"
+        destination_branch: "lxk0301"
+        github_token: ${{ secrets.PAT }}
+
+    - name: github to gitee
+      uses: Yikun/hub-mirror-action@master
+      if: env.dst_key
+      with:
           src: github/lxk0301
           dst: gitee/lxk0301
-          static_list: "How_To_Import_Project_To_Github"
+          static_list: "scripts"
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}

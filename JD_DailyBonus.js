@@ -1937,6 +1937,7 @@ function JDTakeaLook(s) {
           const Details = LogDetails ? "response:\n" + data : '';
           const zone = new Date().getTimezoneOffset()
           console.log(`京东服务器返回的时间戳${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
+          console.log(`京东UTC-O时间${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
           const da = Date.now();
           console.log(`action-Date.now()::::${da}`);
           console.log(`action-零点::::${new Date(da).setHours(0, 0, 0, 0)}`);
@@ -1948,7 +1949,7 @@ function JDTakeaLook(s) {
           const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da - 28800000).setHours(0, 0, 0, 0);
           const tm2 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da).setHours(0, 0, 0, 0);
           const tm3 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date().setHours(0, 0, 0, 0);
-          const tm4 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(new Date().toLocaleDateString()).getTime();
+          const tm4 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(new Date().toLocaleDateString()).getTime() - 28800000;
           console.log(`tm1(减去8小时):::${tm1}`)
           console.log(`tm2(不加不减):::${tm2}`)
           console.log(`tm3:::${tm3}`)

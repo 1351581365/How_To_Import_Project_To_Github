@@ -1937,7 +1937,7 @@ function JDTakeaLook(s) {
           const Details = LogDetails ? "response:\n" + data : '';
           const zone = new Date().getTimezoneOffset()
           console.log(`京东服务器返回的时间戳${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
-          console.log(`京东UTC-O时间${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
+          console.log(`京东UTC-O时间${new Date(cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime)}`)
           const da = Date.now();
           console.log(`action-Date.now()::::${da}`);
           console.log(`action-零点::::${new Date(da).setHours(0, 0, 0, 0)}`);

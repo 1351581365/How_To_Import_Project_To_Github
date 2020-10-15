@@ -1937,11 +1937,12 @@ function JDTakeaLook(s) {
           const Details = LogDetails ? "response:\n" + data : '';
           const zone = new Date().getTimezoneOffset()
           console.log(`野比zone:::${zone}`)
-          const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() + 28800000).setHours(0, 0, 0, 0);
+          const da = Date.now();
+          const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da + 28800000).setHours(0, 0, 0, 0);
           console.log(`野比tm:::${tm}`)
           console.log(`京东服务器返回的时间戳${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
-          const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() - 28800000).setHours(0, 0, 0, 0);
-          const tm2 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now()).setHours(0, 0, 0, 0);
+          const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da - 28800000).setHours(0, 0, 0, 0);
+          const tm2 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da).setHours(0, 0, 0, 0);
           console.log(`tm1(减去8小时):::${tm1}`)
           console.log(`tm2(不加不减):::${tm2}`)
           console.log(`野比data.match(tm):${data.match(tm)}`)

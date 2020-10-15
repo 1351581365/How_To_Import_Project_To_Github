@@ -1939,6 +1939,8 @@ function JDTakeaLook(s) {
           console.log(`京东服务器返回的时间戳${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
           const da = Date.now();
           console.log(`action-Date.now()::::${da}`);
+          console.log(`action-零点::::${new Date(da).setHours(0, 0, 0, 0)}`);
+          console.log(`action-new Date()零点::::${new Date().setHours(0, 0, 0, 0)}`);
           console.log(`差值：：${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime - da}`)
           console.log(`野比zone:::${zone}`)
           const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da + 28800000).setHours(0, 0, 0, 0);

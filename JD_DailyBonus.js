@@ -1937,9 +1937,9 @@ function JDTakeaLook(s) {
           const Details = LogDetails ? "response:\n" + data : '';
           const zone = new Date().getTimezoneOffset()
           console.log(`zone${zone}`)
-          const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now + 28800000).setHours(0, 0, 0, 0);
+          const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() + 28800000).setHours(0, 0, 0, 0);
           console.log(`tm${tm}`)
-          const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now - 28800000).setHours(0, 0, 0, 0);
+          const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() - 28800000).setHours(0, 0, 0, 0);
           console.log(`tm1减去8小时${tm1}`)
           console.log(`data.match(tm):${data.match(tm)}`)
           console.log(`data.match(tm1):${data.match(tm1)}`)

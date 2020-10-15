@@ -1947,11 +1947,14 @@ function JDTakeaLook(s) {
           console.log(`野比tm:::${tm}`)
           const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da - 28800000).setHours(0, 0, 0, 0);
           const tm2 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da).setHours(0, 0, 0, 0);
+          const tm3 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date().setHours(0, 0, 0, 0);
           console.log(`tm1(减去8小时):::${tm1}`)
           console.log(`tm2(不加不减):::${tm2}`)
+          console.log(`tm3:::${tm3}`)
           console.log(`野比data.match(tm):${data.match(tm)}`)
           console.log(`data.match(tm1):${data.match(tm1)}`)
           console.log(`data.match(tm2):${data.match(tm2)}`)
+          console.log(`data.match(tm3):${data.match(tm3)}`)
           if (zone !== -480 && zone !== 0) throw new Error('非UTC+8时区, 签到结果未知.');
           if (data.match(/签到成功/) && !data.match(tm)) {
             console.log(`\n京东发现-看看签到成功 ${Details}`)

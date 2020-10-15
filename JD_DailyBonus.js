@@ -1936,13 +1936,13 @@ function JDTakeaLook(s) {
           const cc = JSON.parse(data);
           const Details = LogDetails ? "response:\n" + data : '';
           const zone = new Date().getTimezoneOffset()
-          console.log(`zone:::${zone}`)
+          console.log(`野比zone:::${zone}`)
           const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() + 28800000).setHours(0, 0, 0, 0);
-          console.log(`tm:::${tm}`)
-          console.log(`京东服务器返回的时间戳${cc.data.discTasks.signDetail.discTaskItemInfos[3].handleTime}`)
+          console.log(`野比tm:::${tm}`)
+          console.log(`京东服务器返回的时间戳${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
           const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() - 28800000).setHours(0, 0, 0, 0);
           console.log(`tm1(减去8小时):::${tm1}`)
-          console.log(`data.match(tm):${data.match(tm)}`)
+          console.log(`野比data.match(tm):${data.match(tm)}`)
           console.log(`data.match(tm1):${data.match(tm1)}`)
           if (zone !== -480 && zone !== 0) throw new Error('非UTC+8时区, 签到结果未知.');
           if (data.match(/签到成功/) && !data.match(tm)) {

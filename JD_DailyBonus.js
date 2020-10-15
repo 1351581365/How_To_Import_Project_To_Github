@@ -1938,8 +1938,8 @@ function JDTakeaLook(s) {
           const zone = new Date().getTimezoneOffset()
           console.log(`zone:::${zone}`)
           const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() + 28800000).setHours(0, 0, 0, 0);
-          console.log(`tm${tm}`)
-          console.log(`京东服务器返回的时间戳${data.data.discTasks.signDetail.discTaskItemInfos[3].handleTime}`)
+          console.log(`tm:::${tm}`)
+          console.log(`京东服务器返回的时间戳${cc.data.discTasks.signDetail.discTaskItemInfos[3].handleTime}`)
           const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(Date.now() - 28800000).setHours(0, 0, 0, 0);
           console.log(`tm1(减去8小时):::${tm1}`)
           console.log(`data.match(tm):${data.match(tm)}`)

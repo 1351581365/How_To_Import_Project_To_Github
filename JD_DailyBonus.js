@@ -1936,11 +1936,13 @@ function JDTakeaLook(s) {
           const cc = JSON.parse(data);
           const Details = LogDetails ? "response:\n" + data : '';
           const zone = new Date().getTimezoneOffset()
-          console.log(`野比zone:::${zone}`)
+          console.log(`京东服务器返回的时间戳${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
           const da = Date.now();
+          console.log(`action-Date.now()::::${da}`);
+          console.log(`差值：：${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime - da}`)
+          console.log(`野比zone:::${zone}`)
           const tm = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da + 28800000).setHours(0, 0, 0, 0);
           console.log(`野比tm:::${tm}`)
-          console.log(`京东服务器返回的时间戳${cc.data.discTasks[0].signDetail.discTaskItemInfos[3].handleTime}`)
           const tm1 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da - 28800000).setHours(0, 0, 0, 0);
           const tm2 = zone == -480 ? new Date().setHours(0, 0, 0, 0) : new Date(da).setHours(0, 0, 0, 0);
           console.log(`tm1(减去8小时):::${tm1}`)
